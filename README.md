@@ -2,7 +2,7 @@
 
 ## Description
 
-This Pet Adoption App is a React-based web application that allows users to browse and search for pets available for adoption. It utilizes a RESTful API to fetch pet data and implements features such as pagination and pet search functionality.
+This Pet Listing App is a React-based web application that allows users to browse and search for pets available for adoption. It utilizes a RESTful API to fetch pet data and implements features such as pagination and pet search functionality.
 
 ## Features
 
