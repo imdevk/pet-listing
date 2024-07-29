@@ -1,4 +1,4 @@
-# Pet Adoption App
+# Pet Listing App
 
 ## Description
 
@@ -24,10 +24,10 @@ This Pet Adoption App is a React-based web application that allows users to brow
 To run this project locally, follow these steps:
 
 1. Clone the repository
-```git clone https://github.com/yourusername/pet-adoption-app.git```
+```git clone https://github.com/imdevk/pet-listing.git```
 
 2. Navigate to the project directory
-```cd pet-listing-app```
+```cd pet-listing```
 
 3. Install dependencies
 ```npm install```
