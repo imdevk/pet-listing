@@ -1,17 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { getBreeds } from '../services/api';
+import LoadingSpinner from './LoadingSpinner';
 
 const SearchForm = ({ onSearch }) => {
     const [animal, setAnimal] = useState('');
     const [breed, setBreed] = useState('');
     const [location, setLocation] = useState('');
     const [breeds, setBreeds] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         if (animal) {
-            getBreeds(animal).then(setBreeds);
+            fetchBreeds(animal);
+        } else {
+            setBreeds([]);
+            setBreed('');
         }
     }, [animal]);
+
+    const fetchBreeds = async (animalType) => {
+        try {
+            setLoading(true);
+            setError(null);
+            const fetchedBreeds = await getBreeds(animalType);
+            setBreeds(fetchedBreeds);
+        } catch (err) {
+            console.error('Error fetching breeds:', err);
+            setError('Failed to fetch breeds. Please try again.');
+            setBreeds([]);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -48,6 +69,8 @@ const SearchForm = ({ onSearch }) => {
                             <option key={b} value={b}>{b}</option>
                         ))}
                     </select>
+                    {loading && <LoadingSpinner />}
+                    {error && <p className="text-sm text-red-500 mt-1">{error}</p>}
                 </div>
                 <div>
                     <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-1">Location</label>

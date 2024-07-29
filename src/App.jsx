@@ -11,8 +11,8 @@ function App() {
         <div className="min-h-screen flex flex-col w-screen">
           <nav className="bg-gradient-to-r from-blue-600 to-blue-400 text-white p-4 shadow-md">
             <div className="container mx-auto flex justify-between items-center">
-              <Link to="/" className="text-2xl font-bold hover:text-blue-100 transition-colors">🐾 Pet Finder</Link>
-              <Link to="/" className="hover:text-blue-100 transition-colors">Home</Link>
+              <Link to="/" className="text-black text-2xl font-bold hover:text-blue-100 transition-colors">🐾 Pet Finder</Link>
+              <Link to="/" className="text-black hover:text-blue-100 transition-colors">Home</Link>
             </div>
           </nav>
           <main className="flex-grow container mx-auto px-4 py-8">
